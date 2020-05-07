@@ -138,9 +138,14 @@ public class ResourceHolderSlick {
 
 		for(int i = 0; i < numBlocks; i++) {
 			Image imgNormal = loadImage(skindir + "/graphics/blockskin/normal/n" + i + ".png");
+			Image imgSmall = loadImage(skindir + "/graphics/blockskin/small/s" + i + ".png");
+			Image imgBig = loadImage(skindir + "/graphics/blockskin/big/b" + i + ".png");
+			imgNormal.setFilter(Image.FILTER_NEAREST);
+			imgSmall.setFilter(Image.FILTER_NEAREST);
+			imgBig.setFilter(Image.FILTER_NEAREST);
 			imgNormalBlockList.add(imgNormal);
-			imgSmallBlockList.add(loadImage(skindir + "/graphics/blockskin/small/s" + i + ".png"));
-			imgBigBlockList.add(loadImage(skindir + "/graphics/blockskin/big/b" + i + ".png"));
+			imgSmallBlockList.add(imgSmall);
+			imgBigBlockList.add(imgBig);
 
 			if((imgNormal.getWidth() >= 400) && (imgNormal.getHeight() >= 304)) {
 				blockStickyFlagList.add(Boolean.TRUE);
@@ -158,6 +163,9 @@ public class ResourceHolderSlick {
 		imgFieldbg2 = loadImage(skindir + "/graphics/fieldbg2.png");
 		imgFieldbg2Small = loadImage(skindir + "/graphics/fieldbg2_small.png");
 		imgFieldbg2Big = loadImage(skindir + "/graphics/fieldbg2_big.png");
+
+		imgFont.setFilter(Image.FILTER_NEAREST);
+		imgFontSmall.setFilter(Image.FILTER_NEAREST);
 
 		if(NullpoMinoSlick.propConfig.getProperty("option.showlineeffect", true) == true) {
 			loadLineClearEffectImages();
