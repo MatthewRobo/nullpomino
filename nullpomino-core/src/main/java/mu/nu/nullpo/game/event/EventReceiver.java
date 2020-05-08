@@ -51,9 +51,9 @@ public class EventReceiver {
 	/** Field X position */
 	public static final int[][][] NEW_FIELD_OFFSET_X = {
 		{	// TETROMINO
-			{119, 247, 375, 503, 247, 375}, // Small
-			{ 32, 432, 432, 432, 432, 432}, // Normal
-			{ 16, 416, 416, 416, 416, 416}, // Big
+			{225, 353, 481, 609, 353, 481}, // Small
+			{ 138, 538, 538, 538, 538, 538}, // Normal
+			{ 122, 522, 522, 522, 522, 522}, // Big
 		},
 		{	// AVALANCHE
 			{119, 247, 375, 503, 247, 375}, // Small

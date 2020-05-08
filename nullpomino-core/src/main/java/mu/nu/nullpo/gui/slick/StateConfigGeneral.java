@@ -81,7 +81,7 @@ public class StateConfigGeneral extends BaseGameState {
 	/** Screen size table */
 	protected static final int[][] SCREENSIZE_TABLE =
 	{
-		{320,240}, {400,300}, {480,360}, {512,384}, {640,480}, {800,600}, {1024,768}, {1152,864}, {1280,960}
+		{320,240}, {400,300}, {480,360}, {512,384}, {640,480}, {800,600}, {1024,768}, {1152,864}, {1280,960}, {1707,960}, {1920, 1080}
 	};
 
 	/** Cursor position */

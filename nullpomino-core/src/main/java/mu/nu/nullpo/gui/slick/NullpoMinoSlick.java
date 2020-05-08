@@ -389,7 +389,7 @@ public class NullpoMinoSlick extends StateBasedGame {
 			NullpoMinoSlick obj = new NullpoMinoSlick();
 
 			if((sWidth != 640) || (sHeight != 480)) {
-				ScalableGame sObj = new ScalableGame(obj, 640, 480, true);
+				ScalableGame sObj = new ScalableGame(obj, 853, 480, true);
 				appGameContainer = new AppGameContainer(sObj);
 			} else {
 				appGameContainer = new AppGameContainer(obj);
