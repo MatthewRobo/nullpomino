@@ -71,7 +71,7 @@ public class GameKeyDummy {
 	 * @return Has been pressedtrue
 	 */
 	public boolean isPushKey(int key) {
-		return (inputstate[key] == 1);
+		return (inputstate[key] == 2);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class GameKeyDummy {
 	 * @return Has been pressedtrue
 	 */
 	public boolean isPressKey(int key) {
-		return (inputstate[key] >= 1);
+		return (inputstate[key] >= 2);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class GameKeyDummy {
 	 * @return If the cursor movestrue
 	 */
 	public boolean isMenuRepeatKey(int key) {
-		if((inputstate[key] == 1) || ((inputstate[key] >= 25) && (inputstate[key] % 3 == 0)) || ((inputstate[key] >= 1) && isPressKey(BUTTON_C)))
+		if((inputstate[key] == 2) || (((inputstate[key] >= 25 - 1)) && ((inputstate[key] - 1) % 3 == 0)) || ((inputstate[key] >= 2) && isPressKey(BUTTON_C)))
 			return true;
 
 		return false;

@@ -159,10 +159,12 @@ public class GameKeySlick extends GameKeyDummy {
 				break;
 			}
 
-			if(flag){
+			if(flag && inputstate[i] > 0){
 				inputstate[i]++;
 			}
-			else inputstate[i] = 0;
+			else if (!flag) {
+				inputstate[i] = 1;
+			}
 		}
 	}
 

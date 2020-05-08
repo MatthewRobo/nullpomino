@@ -138,7 +138,7 @@ public class Controller implements Serializable {
 	 * @return  buttonA1 frame If you hold down onlytrue
 	 */
 	public boolean isPush(int btn) {
-		return (buttonTime[btn] == 1);
+		return (buttonTime[btn] == 2);
 	}
 
 	/**
@@ -147,7 +147,7 @@ public class Controller implements Serializable {
 	 * @return  buttonState if you press thetrue
 	 */
 	public boolean isPress(int btn) {
-		return (buttonTime[btn] >= 1);
+		return (buttonTime[btn] >= 2);
 	}
 
 	/**
@@ -166,8 +166,8 @@ public class Controller implements Serializable {
 	 * @return If the cursor movestrue
 	 */
 	public boolean isMenuRepeatKey(int key, boolean enableCButton) {
-		if( (buttonTime[key] == 1) || ((buttonTime[key] >= 25) && (buttonTime[key] % 3 == 0)) ||
-		    ((buttonTime[key] >= 1) && isPress(BUTTON_C) && enableCButton) )
+		if( (buttonTime[key] == 2) || (((buttonTime[key] - 1) >= 25) && ((buttonTime[key] - 1) % 3 == 0)) ||
+		    ((buttonTime[key] >= 2) && isPress(BUTTON_C) && enableCButton) )
 		{
 			return true;
 		}
@@ -245,8 +245,8 @@ public class Controller implements Serializable {
 	 */
 	public void updateButtonTime() {
 		for(int i = 0; i < BUTTON_COUNT; i++) {
-			if(buttonPress[i]) buttonTime[i]++;
-			else buttonTime[i] = 0;
+			if(buttonPress[i] && buttonTime[i] > 0) buttonTime[i]++;
+			else if (!buttonPress[i]) buttonTime[i] = 1;
 		}
 	}
 
